@@ -90,10 +90,8 @@ int CheckUserSig(void *crit_data)
         printf("WD: setenv WD_CALLER to %s\n", buff);
         RecreateUser(crit_data);
 
-
-        /* NEED TO CHECK THESE LINES */
-        /* while (!user_signal_arrived);
-        setenv("WD_CALLER", "0", 1); */
+        while (!user_signal_arrived);
+        setenv("WD_CALLER", "0", 1);
     }
 
     return (1);
